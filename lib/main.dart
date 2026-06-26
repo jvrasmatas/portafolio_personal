@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portafolio_personal/routes/app_routes.dart';
 import 'package:portafolio_personal/theme/app_theme.dart';
 
 void main() {
@@ -14,9 +15,8 @@ class MyApp extends StatelessWidget {
       title: 'Portafolio',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.dark(),
-      home: const Scaffold(
-        body: Center(child: Text('Portafolio en construcción')),
-      ),
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.routes,
     );
   }
 }
