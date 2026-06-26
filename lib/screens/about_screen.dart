@@ -28,38 +28,46 @@ class AboutScreen extends StatelessWidget {
     return SafeArea(
       child: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
-        child: Column(
-          children: [
-            const CircleAvatar(
-              radius: 70,
-              backgroundColor: Colors.white12,
-              child: Icon(Icons.person, size: 70, color: Colors.white54),
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 480),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const CircleAvatar(
+                  radius: 70,
+                  backgroundColor: Colors.white12,
+                  child: Icon(Icons.person, size: 70, color: Colors.white54),
+                ),
+                const SizedBox(height: 24),
+                const Text(
+                  'Juan Vrasmatas',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                const Text(
+                  'Programar, IA, musica, cocinar',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white70, fontSize: 16),
+                ),
+                const SizedBox(height: 32),
+                Wrap(
+                  spacing: 24,
+                  runSpacing: 16,
+                  alignment: WrapAlignment.center,
+                  children: socialLinks
+                      .map((link) => SocialIconButton(link: link))
+                      .toList(),
+                ),
+              ],
             ),
-            const SizedBox(height: 24),
-            const Text(
-              'Juan Vrasmatas',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 12),
-            const Text(
-              'Programar, IA, musica, cocinar',
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white70, fontSize: 16),
-            ),
-            const SizedBox(height: 32),
-            Wrap(
-              spacing: 24,
-              runSpacing: 16,
-              alignment: WrapAlignment.center,
-              children: socialLinks
-                  .map((link) => SocialIconButton(link: link))
-                  .toList(),
-            ),
-          ],
+          ),
         ),
       ),
     );
