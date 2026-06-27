@@ -38,7 +38,8 @@ class AboutScreen extends StatelessWidget {
                 const CircleAvatar(
                   radius: 70,
                   backgroundColor: Colors.white12,
-                  child: Icon(Icons.person, size: 70, color: Colors.white54),
+                  backgroundImage:
+                      AssetImage('assets/images/foto-perfil.png'),
                 ),
                 const SizedBox(height: 24),
                 const Text(
